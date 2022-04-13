@@ -154,6 +154,12 @@
     <ClInclude Include="map.h" />
     <ClInclude Include="View.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\boom.png" />
+    <Image Include="images\GrayHero.png" />
+    <Image Include="images\GreenHero.png" />
+    <Image Include="images\map.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

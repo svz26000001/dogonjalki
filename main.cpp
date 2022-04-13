@@ -5,9 +5,9 @@
 
 using namespace sf;
 
-////////////////////////////////////////////////////КЛАСС ИГРОКА////////////////////////
+////////////////////////////////////////////////////РљР›РђРЎРЎ РР“Р РћРљРђ////////////////////////
 class Player {
-	/* это задел на следующие уроки,прошу не обращать внимания)
+	/* СЌС‚Рѕ Р·Р°РґРµР» РЅР° СЃР»РµРґСѓСЋС‰РёРµ СѓСЂРѕРєРё,РїСЂРѕС€Сѓ РЅРµ РѕР±СЂР°С‰Р°С‚СЊ РІРЅРёРјР°РЅРёСЏ) //bbbb/ 
 private: float w, h, dx, dy, x, y, speed;
 		 int dir, playerScore, health;
 		 bool life;
@@ -16,7 +16,7 @@ private: float w, h, dx, dy, x, y, speed;
 public:
 	float w, h, dx, dy, x, y, speed;
 	int dir, playerScore, health;
-	bool life, isMove, isSelect, onGround;//добавили переменные состояния движения и выбора объекта
+	bool life, isMove, isSelect, onGround;//РґРѕР±Р°РІРёР»Рё РїРµСЂРµРјРµРЅРЅС‹Рµ СЃРѕСЃС‚РѕСЏРЅРёСЏ РґРІРёР¶РµРЅРёСЏ Рё РІС‹Р±РѕСЂР° РѕР±СЉРµРєС‚Р°
 	enum {left, right, up, down, jump, stay} state;
 	String File;
 	Image image;
@@ -46,7 +46,7 @@ public:
 		}
 
 		if ((Keyboard::isKeyPressed(Keyboard::Up)) && (onGround)) {
-			state = jump; dy = -0.8; onGround = false;//то состояние равно прыжок,прыгнули и сообщили, что мы не на земле
+			state = jump; dy = -0.8; onGround = false;//С‚Рѕ СЃРѕСЃС‚РѕСЏРЅРёРµ СЂР°РІРЅРѕ РїСЂС‹Р¶РѕРє,РїСЂС‹РіРЅСѓР»Рё Рё СЃРѕРѕР±С‰РёР»Рё, С‡С‚Рѕ РјС‹ РЅРµ РЅР° Р·РµРјР»Рµ
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Down)) {
@@ -75,17 +75,17 @@ public:
 		dy = dy + 0.0015 * time;
 	}
 
-	float getWidth() {//получить ширину объека
+	float getWidth() {//РїРѕР»СѓС‡РёС‚СЊ С€РёСЂРёРЅСѓ РѕР±СЉРµРєР°
 		return w;
 	}
-	void setWidth(float width) {//установить ширину объекта
+	void setWidth(float width) {//СѓСЃС‚Р°РЅРѕРІРёС‚СЊ С€РёСЂРёРЅСѓ РѕР±СЉРµРєС‚Р°
 		w = width;
 	}
 
-	float getHeight() {//взять ширину объекта
+	float getHeight() {//РІР·СЏС‚СЊ С€РёСЂРёРЅСѓ РѕР±СЉРµРєС‚Р°
 		return h;
 	}
-	void setHeight(float height) {//задать ширину объекта
+	void setHeight(float height) {//Р·Р°РґР°С‚СЊ С€РёСЂРёРЅСѓ РѕР±СЉРµРєС‚Р°
 		h = height;
 	}
 
@@ -130,7 +130,7 @@ public:
 
 };
 
-class SpriteManager {//это задел на следующие уроки,прошу не обращать внимания на эти изменения)
+class SpriteManager {//СЌС‚Рѕ Р·Р°РґРµР» РЅР° СЃР»РµРґСѓСЋС‰РёРµ СѓСЂРѕРєРё,РїСЂРѕС€Сѓ РЅРµ РѕР±СЂР°С‰Р°С‚СЊ РІРЅРёРјР°РЅРёСЏ РЅР° СЌС‚Рё РёР·РјРµРЅРµРЅРёСЏ)
 public:
 	Image image;
 	Texture texture;
@@ -169,7 +169,7 @@ int main()
 	Sprite s_map;
 	s_map.setTexture(map);
 
-	//SpriteManager playerSprite("hero.png", "Hero");//это задел на следующие уроки,прошу не обращать внимания)
+	//SpriteManager playerSprite("hero.png", "Hero");//СЌС‚Рѕ Р·Р°РґРµР» РЅР° СЃР»РµРґСѓСЋС‰РёРµ СѓСЂРѕРєРё,РїСЂРѕС€Сѓ РЅРµ РѕР±СЂР°С‰Р°С‚СЊ РІРЅРёРјР°РЅРёСЏ)
 
 	Player p("GreenHero.png", 250, 960-110, 40, 96);
 
@@ -177,9 +177,9 @@ int main()
 	Clock clock;
 	float dX = 0;
 	float dY = 0;
-	int tempX = 0;//временная коорд Х.Снимаем ее после нажатия прав клав мыши
-	int tempY = 0;//коорд Y
-	float distance = 0;//это расстояние от объекта до тыка курсора
+	int tempX = 0;//РІСЂРµРјРµРЅРЅР°СЏ РєРѕРѕСЂРґ РҐ.РЎРЅРёРјР°РµРј РµРµ РїРѕСЃР»Рµ РЅР°Р¶Р°С‚РёСЏ РїСЂР°РІ РєР»Р°РІ РјС‹С€Рё
+	int tempY = 0;//РєРѕРѕСЂРґ Y
+	float distance = 0;//СЌС‚Рѕ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РѕР±СЉРµРєС‚Р° РґРѕ С‚С‹РєР° РєСѓСЂСЃРѕСЂР°
 	while (window.isOpen())
 	{
 
@@ -188,8 +188,8 @@ int main()
 		clock.restart();
 		time = time / 800;
 
-		Vector2i pixelPos = Mouse::getPosition(window);//забираем коорд курсора
-		Vector2f pos = window.mapPixelToCoords(pixelPos);//переводим их в игровые (уходим от коорд окна)
+		Vector2i pixelPos = Mouse::getPosition(window);//Р·Р°Р±РёСЂР°РµРј РєРѕРѕСЂРґ РєСѓСЂСЃРѕСЂР°
+		Vector2f pos = window.mapPixelToCoords(pixelPos);//РїРµСЂРµРІРѕРґРёРј РёС… РІ РёРіСЂРѕРІС‹Рµ (СѓС…РѕРґРёРј РѕС‚ РєРѕРѕСЂРґ РѕРєРЅР°)
 
 
 		Event event;
@@ -198,44 +198,44 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 
-			if (event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
-				if (event.key.code == Mouse::Left) {//а именно левая
-					if (p.sprite.getGlobalBounds().contains(pos.x, pos.y))//и при этом координата курсора попадает в спрайт
+			if (event.type == Event::MouseButtonPressed)//РµСЃР»Рё РЅР°Р¶Р°С‚Р° РєР»Р°РІРёС€Р° РјС‹С€Рё
+				if (event.key.code == Mouse::Left) {//Р° РёРјРµРЅРЅРѕ Р»РµРІР°СЏ
+					if (p.sprite.getGlobalBounds().contains(pos.x, pos.y))//Рё РїСЂРё СЌС‚РѕРј РєРѕРѕСЂРґРёРЅР°С‚Р° РєСѓСЂСЃРѕСЂР° РїРѕРїР°РґР°РµС‚ РІ СЃРїСЂР°Р№С‚
 					{
-						p.sprite.setColor(Color::Green);//красим спрайт в зеленый,тем самым говоря игроку,что он выбрал персонажа и может сделать ход
+						p.sprite.setColor(Color::Green);//РєСЂР°СЃРёРј СЃРїСЂР°Р№С‚ РІ Р·РµР»РµРЅС‹Р№,С‚РµРј СЃР°РјС‹Рј РіРѕРІРѕСЂСЏ РёРіСЂРѕРєСѓ,С‡С‚Рѕ РѕРЅ РІС‹Р±СЂР°Р» РїРµСЂСЃРѕРЅР°Р¶Р° Рё РјРѕР¶РµС‚ СЃРґРµР»Р°С‚СЊ С…РѕРґ
 						p.isSelect = true;
 					}
 				}
 
 
-			if (p.isSelect)//если выбрали объект
-				if (event.type == Event::MouseButtonPressed)//если нажата клавиша мыши
-					if (event.key.code == Mouse::Right) {//а именно правая
-						p.isMove = true;//то начинаем движение
-						p.isSelect = false;//объект уже не выбран
-						p.sprite.setColor(Color::White);//возвращаем обычный цвет спрайту
-						tempX = pos.x;//забираем координату нажатия курсора Х
-						tempY = pos.y;//и Y
+			if (p.isSelect)//РµСЃР»Рё РІС‹Р±СЂР°Р»Рё РѕР±СЉРµРєС‚
+				if (event.type == Event::MouseButtonPressed)//РµСЃР»Рё РЅР°Р¶Р°С‚Р° РєР»Р°РІРёС€Р° РјС‹С€Рё
+					if (event.key.code == Mouse::Right) {//Р° РёРјРµРЅРЅРѕ РїСЂР°РІР°СЏ
+						p.isMove = true;//С‚Рѕ РЅР°С‡РёРЅР°РµРј РґРІРёР¶РµРЅРёРµ
+						p.isSelect = false;//РѕР±СЉРµРєС‚ СѓР¶Рµ РЅРµ РІС‹Р±СЂР°РЅ
+						p.sprite.setColor(Color::White);//РІРѕР·РІСЂР°С‰Р°РµРј РѕР±С‹С‡РЅС‹Р№ С†РІРµС‚ СЃРїСЂР°Р№С‚Сѓ
+						tempX = pos.x;//Р·Р°Р±РёСЂР°РµРј РєРѕРѕСЂРґРёРЅР°С‚Сѓ РЅР°Р¶Р°С‚РёСЏ РєСѓСЂСЃРѕСЂР° РҐ
+						tempY = pos.y;//Рё Y
 
 					}
 		}
 
 
 		if (p.isMove) {
-			distance = sqrt((tempX - p.x) * (tempX - p.x) + (tempY - p.y) * (tempY - p.y));//считаем дистанцию (расстояние от точки А до точки Б). используя формулу длины вектора
+			distance = sqrt((tempX - p.x) * (tempX - p.x) + (tempY - p.y) * (tempY - p.y));//СЃС‡РёС‚Р°РµРј РґРёСЃС‚Р°РЅС†РёСЋ (СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ С‚РѕС‡РєРё Рђ РґРѕ С‚РѕС‡РєРё Р‘). РёСЃРїРѕР»СЊР·СѓСЏ С„РѕСЂРјСѓР»Сѓ РґР»РёРЅС‹ РІРµРєС‚РѕСЂР°
 
-			if (distance > 2) {//этим условием убираем дергание во время конечной позиции спрайта
+			if (distance > 2) {//СЌС‚РёРј СѓСЃР»РѕРІРёРµРј СѓР±РёСЂР°РµРј РґРµСЂРіР°РЅРёРµ РІРѕ РІСЂРµРјСЏ РєРѕРЅРµС‡РЅРѕР№ РїРѕР·РёС†РёРё СЃРїСЂР°Р№С‚Р°
 
-				p.x += 0.1 * time * (tempX - p.x) / distance;//идем по иксу с помощью вектора нормали
-				p.y += 0.1 * time * (tempY - p.y) / distance;//идем по игреку так же
+				p.x += 0.1 * time * (tempX - p.x) / distance;//РёРґРµРј РїРѕ РёРєСЃСѓ СЃ РїРѕРјРѕС‰СЊСЋ РІРµРєС‚РѕСЂР° РЅРѕСЂРјР°Р»Рё
+				p.y += 0.1 * time * (tempY - p.y) / distance;//РёРґРµРј РїРѕ РёРіСЂРµРєСѓ С‚Р°Рє Р¶Рµ
 			}
-			else { p.isMove = false; std::cout << "priehali\n"; }//говорим что уже никуда не идем и выводим веселое сообщение в консоль
+			else { p.isMove = false; std::cout << "priehali\n"; }//РіРѕРІРѕСЂРёРј С‡С‚Рѕ СѓР¶Рµ РЅРёРєСѓРґР° РЅРµ РёРґРµРј Рё РІС‹РІРѕРґРёРј РІРµСЃРµР»РѕРµ СЃРѕРѕР±С‰РµРЅРёРµ РІ РєРѕРЅСЃРѕР»СЊ
 		}
 
 
 
 
-		///////////////////////////////////////////Управление персонажем с анимацией////////////////////////////////////////////////////////////////////////
+		///////////////////////////////////////////РЈРїСЂР°РІР»РµРЅРёРµ РїРµСЂСЃРѕРЅР°Р¶РµРј СЃ Р°РЅРёРјР°С†РёРµР№////////////////////////////////////////////////////////////////////////
 		if (p.life) checkingCoord(p.getplayercoordinateX(), p.getplayercoordinateY());
 
 
